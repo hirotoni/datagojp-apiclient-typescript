@@ -1,0 +1,35 @@
+{
+  "name": "@hirotoni/datagojp-apiclient-typescript",
+  "description": "Api client module for www.data.go.jp written in Typescript. For more detail info about the site, visit https://www.data.go.jp/for-developer/for-developer",
+  "author": "hirotoni",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hirotoni/datagojp-apiclient-typescript"
+  },
+  "keywords": [
+    "data.go.jp",
+    "open",
+    "data",
+    "catalog"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^1.2.0",
+    "qs": "^6.11.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.2.3",
+    "@types/qs": "^6.9.7",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  }
+}

@@ -1,0 +1,5 @@
+/allendpoints.http
+/node_modules
+/src
+/tsconfig.json
+/jest.config.ts
