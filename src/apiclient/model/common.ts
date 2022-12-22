@@ -99,6 +99,10 @@ export type Organization = {
   type: string;
   id: string;
   approval_status: string;
+  display_name: string;
+  image_display_url: string;
+  num_followers: number;
+  package_count: number;
 };
 
 export type Tag = {

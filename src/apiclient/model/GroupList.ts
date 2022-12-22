@@ -1,5 +1,5 @@
 export type GroupListParams = {
-  order_by?: string;
+  order_by?: keyof GroupListAllFields;
   groups?: string[];
   all_fields?: boolean;
 };

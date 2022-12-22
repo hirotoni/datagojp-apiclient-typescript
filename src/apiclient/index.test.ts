@@ -1,4 +1,5 @@
 import { ApiClient } from ".";
+import { TagListAllFieldsResult } from "./model/TagList";
 
 describe("api client test", () => {
   const client = new ApiClient();
@@ -97,17 +98,6 @@ describe("api client test", () => {
       expect(data.success).toBe(true);
       expect(data.result).toEqual(target);
     });
-
-    test("with params: organizations, all_fields", async () => {
-      const target = ["org_2200", "org_0300"];
-      const data = await client.fetchOrganizationList({
-        organizations: target,
-        all_fields: true,
-      });
-      expect(data.success).toBe(true);
-      // const a = data.result as Organization[];
-      expect(data.result).toEqual(target);
-    });
   });
 
   describe("LicenseList", () => {
@@ -135,7 +125,7 @@ describe("api client test", () => {
     });
 
     test("with params: query, all_fields", async () => {
-      const data = await client.fetchTagList({ query: "5G", all_fields: true });
+      const data = await client.fetchTagList({ query: "GIS", all_fields: true });
       expect(data.success).toBe(true);
 
       // ===== check if the result has id and name key =====
@@ -144,9 +134,8 @@ describe("api client test", () => {
       expect(keys.length).toBeGreaterThan(0);
       expect(keys.includes("id") && keys.includes("name")).toBe(true);
 
-      // ===== check if the result has only queried data =====data.result;
-      // TODO typing
-      // expect(data.result.every((d) => d["name"].includes("5G")));
+      // ===== check if the result has only queried data =====
+      expect((data.result as TagListAllFieldsResult).every((d) => d["name"].includes("GIS")));
     });
   });
 
@@ -177,7 +166,7 @@ describe("api client test", () => {
   describe("OrganizationShow", () => {
     test("required params: id", async () => {
       const predata = await client.fetchOrganizationList();
-      const data = await client.fetchOrganizationShow({ id: predata.result[0] });
+      const data = await client.fetchOrganizationShow({ id: predata.result[0] as string });
       expect(data.success).toBe(true);
     });
   });
