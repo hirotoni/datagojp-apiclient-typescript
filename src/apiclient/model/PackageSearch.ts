@@ -6,10 +6,10 @@ export type PackageSearchParams = {
   sort?: string;
   rows?: number;
   start?: number;
-  facet?: string;
-  facet_mincount?: number;
-  facet_limit?: number;
-  facet_field?: string[];
+  facet?: boolean;
+  ["facet.mincount"]?: number;
+  ["facet.limit"]?: number;
+  ["facet.field"]?: string[];
 };
 
 export type PackageSearchResult = {

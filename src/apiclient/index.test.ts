@@ -190,7 +190,11 @@ describe("api client test", () => {
   describe("PackageSearch", () => {
     test("required params: id", async () => {
       const searchQuery = "data";
-      const data = await client.fetchPackageSearch({ q: searchQuery });
+      const data = await client.fetchPackageSearch({
+        q: searchQuery,
+        facet: true,
+        "facet.field": ["organization"],
+      });
       expect(data.success).toBe(true);
       expect(data.result.results[8].title.toLowerCase().includes(searchQuery.toLowerCase())).toBe(true);
     });
