@@ -2,7 +2,7 @@
   "name": "@hirotoni/datagojp-apiclient-typescript",
   "description": "Api client module for www.data.go.jp written in Typescript. For more detail info about the site, visit https://www.data.go.jp/for-developer/for-developer",
   "author": "hirotoni",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
